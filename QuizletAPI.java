@@ -17,7 +17,7 @@ public class QuizletAPI {
     private static String CLIENT_ID;
     private static String SET_ID;
     private ArrayList<String> cards;
-    private String SetName;
+    private String title;
 
     private ArrayList<String> terms, definitions, image, rank;
 
@@ -34,7 +34,7 @@ public class QuizletAPI {
         definitions = getItemFromCards(Choice.DEFINITION);
         image = getItemFromCards(Choice.IMAGE);
         rank = getItemFromCards(Choice.RANK);
-        SetName = websiteText.split("\"title\": \"")[1].split("\",")[0].trim();
+        title = websiteText.split("\"title\": \"")[1].split("\",")[0].trim();
     }
     /**
      * This method returns the Client ID being used
@@ -118,9 +118,9 @@ public class QuizletAPI {
     /**
      * @return The name of the quizlet set.
      */
-    public String getSetName()
+    public String getTitle()
     {
-        return SetName;
+        return title;
     }
     
     /**
