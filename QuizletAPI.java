@@ -17,6 +17,7 @@ public class QuizletAPI {
     private static String CLIENT_ID;
     private static String SET_ID;
     private ArrayList<String> cards;
+    private String SetName;
 
     private ArrayList<String> terms, definitions, image, rank;
 
@@ -25,13 +26,15 @@ public class QuizletAPI {
         SET_ID = setID;
         String URL = "https://api.quizlet.com/2.0/sets/" + SET_ID + "/terms?client_id=" + CLIENT_ID;
         cards = new ArrayList<>();
-        cards.addAll(Arrays.asList(getTextFromWebsite(URL).replace("[", "")
+        String websiteText = getTextFromWebsite(URL);
+        cards.addAll(Arrays.asList(websiteText.replace("[", "")
                 .replace("]", "")
                 .replace("{","").split("},")));
         terms = getItemFromCards(Choice.TERM);
         definitions = getItemFromCards(Choice.DEFINITION);
         image = getItemFromCards(Choice.IMAGE);
         rank = getItemFromCards(Choice.RANK);
+        SetName = websiteText.split("\"title\": \"")[1].split("\",")[0].trim();
     }
     /**
      * This method returns the Client ID being used
@@ -111,7 +114,15 @@ public class QuizletAPI {
     public ArrayList<String> getImages() {
         return image;
     }
-
+    
+    /**
+     * @return The name of the quizlet set.
+     */
+    public String getSetName()
+    {
+        return SetName;
+    }
+    
     /**
      * This method returns the ranks within
      * the set.
