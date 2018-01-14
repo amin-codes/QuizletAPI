@@ -12,7 +12,7 @@ public class Example
 
   public static void main(String[] args)
   {
-    String id = "234104177"; //Random quizlet set I found online
+    String id = "234104177"; //Random quizlet set I found online. I am not the owner/creator of it.
     
     QuizletAPI api = new QuizletAPI(CLIENT_ID, id);
     
