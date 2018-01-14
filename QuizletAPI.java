@@ -24,7 +24,10 @@ public class QuizletAPI {
     public QuizletAPI(String clientID, String setID){
         CLIENT_ID = clientID;
         SET_ID = setID;
-        String URL = "https://api.quizlet.com/2.0/sets/" + SET_ID + "/terms?client_id=" + CLIENT_ID;
+        String base = "https://api.quizlet.com/2.0/sets/" + SET_ID;
+        String URL = base + "/terms?client_id=" + CLIENT_ID;
+        String title_url = base + "?client_id=" + CLIENT_ID;
+
         cards = new ArrayList<>();
         String websiteText = getTextFromWebsite(URL);
         cards.addAll(Arrays.asList(websiteText.replace("[", "")
@@ -34,7 +37,9 @@ public class QuizletAPI {
         definitions = getItemFromCards(Choice.DEFINITION);
         image = getItemFromCards(Choice.IMAGE);
         rank = getItemFromCards(Choice.RANK);
-        title = websiteText.split("\"title\": \"")[1].split("\",")[0].trim();
+
+        String title_text = getTextFromWebsite(title_url);
+        title = title_text.split("title")[1].split("\",")[0].substring(3);
     }
     /**
      * This method returns the Client ID being used
