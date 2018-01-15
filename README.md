@@ -12,9 +12,9 @@ public class Example
 
   public static void main(String[] args)
   {
-    String id = "234104177"; //Random quizlet set I found online. I am not the owner/creator of it.
+    String set_id = "234104177"; //Random quizlet set I found online. I am not the owner/creator of it.
     
-    QuizletAPI api = new QuizletAPI(CLIENT_ID, id);
+    QuizletAPI api = new QuizletAPI(CLIENT_ID, set_id);
     
     //Now you can use all public methods within the QuizletAPI class.
     //For example:
