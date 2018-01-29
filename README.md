@@ -3,8 +3,9 @@ An API made to simplify tasks for retrieving information from quizlet sets. More
 
 # Example Usage
 ```java
+package com.example;
 
-import package.where.api.is.located.QuizletAPI;
+import com.example.package.where.api.is.located.QuizletAPI;
 
 public class Example
 {
