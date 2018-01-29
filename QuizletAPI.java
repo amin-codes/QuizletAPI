@@ -29,8 +29,8 @@ public class QuizletAPI {
         String title_url = base + "?client_id=" + CLIENT_ID;
 
         cards = new ArrayList<>();
-        String websiteText = getTextFromWebsite(URL);
-        cards.addAll(Arrays.asList(websiteText.replace("[", "")
+        String title_text = getTextFromWebsite(title_url);
+        cards.addAll(Arrays.asList(title_url.split(Choice.TERM.getChoice())[1].replace("[", "")
                 .replace("]", "")
                 .replace("{","").split("},")));
         terms = getItemFromCards(Choice.TERM);
@@ -38,7 +38,7 @@ public class QuizletAPI {
         image = getItemFromCards(Choice.IMAGE);
         rank = getItemFromCards(Choice.RANK);
 
-        String title_text = getTextFromWebsite(title_url);
+        
         title = title_text.split("title")[1].split("\",")[0].substring(3);
     }
     /**
