@@ -25,7 +25,6 @@ public class QuizletAPI {
         CLIENT_ID = clientID;
         SET_ID = setID;
         String base = "https://api.quizlet.com/2.0/sets/" + SET_ID;
-        String URL = base + "/terms?client_id=" + CLIENT_ID;
         String title_url = base + "?client_id=" + CLIENT_ID;
 
         cards = new ArrayList<>();
