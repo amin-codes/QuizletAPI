@@ -6,7 +6,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Arrays;
 /**
- * The QuizletAPI was made for the intention of making
+ * The QuizletAPI was made with the intention of making
  * connecting to quizlet sets an easier task to accomplish.
  *
  * @author  Amin
