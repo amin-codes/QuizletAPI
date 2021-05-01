@@ -1,5 +1,7 @@
 # QuizletAPI
-An API made to simplify tasks for retrieving information from quizlet sets. More to be added soon.
+An API made to simplify tasks for retrieving information from quizlet sets.
+
+Note: The official Quizlet API has been discontinued and, thus, this unofficial tool to connect to their API no longer works.
 
 # Example Usage
 ```java
